@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payroll</title>
+  <link rel="stylesheet" href= "{{ url_for('static', filename='css/payroll/payroll.css') }}">
+  <link rel="icon" href="{{url_for('static', filename='img/goose-wh-circle.svg')}}">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet"> 
+
+</head>
+
+<body>
+  <div class="wrapper">
+        
+    <div class="top_container">
+      <div class="header">
+        <div class="hey_container">
+          <div class="hey_title">Hey!</div>
+          <div class="hey_text">
+            <div>I’m IT goose GAGA - </div>
+            <div>light as a feather</div>
+            <div>HR Tech service.</div>
+          </div>          
+        </div>      
+        <div class="image_goose">
+            <img src="{{url_for('static', filename='img/goose.svg')}}" alt="goose"> 
+        </div>
+      </div>
+    </div>    
+        
+    <div class="main-container">
+
+        <div class="question-container">
+            <div class="question">What do you want?
+            </div>
+        
+            <div class="question-list">
+            
+                <div class="q-list"> Want to hire IT-specialists from the global market, but don’t want to deal with the employment.
+                </div>
+                
+                <div class="q-list">Want to pay salary/remuneration to employees in other countries, but don’t want to make many contracts and bank transfers.
+                </div>
+                
+                <div>Want to have tax benefits, but don’t want to navigate the tax systems of different countries myself.
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="help-block">
+        <div class="help-you">
+            <div class="help-you-1">
+                I CAN
+            </div>
+            <div class="help-you-2">
+                <div class="image_cloud">
+                    <img src="{{url_for('static', filename='img/cloud.svg')}}" width="auto" alt="cloud">
+                </div>
+                HELP
+                
+            </div>
+            <div class="help-you-3">
+                YOU!
+                <div class="image_goose_icon">
+                    <img src="{{url_for('static', filename='img/goose-icon.svg')}}" width="auto" alt="goose-icon">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="block-cont">
+    <div class="block-1-4">
+        <div class="up-row">        
+            <div>How do I deal with hiring</div>
+            <div>and</div>
+            <div>compensation?</div>    
+        </div>
+        <div class="np-block-container">
+            <div class="n-block">
+                <div class="num">01</div>
+                <div class="line"></div>
+            </div>
+            
+            <div class="p-block">We can pay salaries/remuneration to your employees in USD, EUR, local currencies and even in crypto wherever they are through my own Global Payroll Services.</div>
+        </div>
+        <div class="np-block-container">
+            <div class="n-block">
+                <div class="num">02</div>
+                <div class="line"></div>
+            </div>
+            <div class="p-block">You get one invoice for all employees in the currency of your choice.</div>
+        </div>
+        <div class="np-block-container">
+            <div class="n-block">
+                <div class="num">03</div>
+                <div class="line"></div>
+            </div>
+            <div class="p-block">                
+                <p>We can make payments:</p>
+                <p>• in Europe, North and South America, Asia</p>
+                <p>• from the EU to Eastern Europe and back.</p>
+            </div>
+        </div>
+        
+        <div class="np-block-container">
+            <div class="n-block">
+                <div class="num">04</div>
+                <div class="line"></div>
+            </div>
+            <div class="p-block">We can help you to hire an employee directly into your staff or to hire them as Independent Contractors. We have branches in Sweden, the Netherlands, Romania, Georgia, Serbia and Cyprus. And don’t stop there!</div>
+        </div>       
+
+        <div class="end-p-block">
+            <p>We have studied tax and labor legislation and all the</p> 
+            <p>particularities of these countries for your maximal profit.</p>
+            <br>
+            <p>And you do the really important things!</p>
+        </div>
+
+    </div> 
+    </div>
+
+
+    
+    <div class="cost-container">
+
+        <div class="prices">
+            <div class="cost-question">What’s the cost?</div>
+        
+            <div class="price-list">
+                <div>Starting from 8.5% of the monthly salary/ remuneration (per employee)*</div>
+                <div>* The price depends on the number of connected employees</div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="form-container">
+        <div class="form-block-container">
+            <div class="left-block">
+                <div>Got any questions?</div>    
+                <div>Contact me,</div>                
+                <div>I shall be waiting.</div>
+                <br>
+                <div>Quack!</div>
+            </div>
+             <form class="form-f" action="/payrollPageForm" method="POST" >
+                <input class="input-f" type="text" name="name" placeholder="Name">
+                <input class="input-f" type="email" name="email" inputmode="email" placeholder="E-mail">
+                <input class="input-f" type="tel" name="tel" inputmode="tel" placeholder="Phone">
+                <textarea class="text-area-f" rows="10" name="comment" placeholder="Add answer here"></textarea>
+                <input class="submit-f" type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+
+
+
+
+
+</div>
+
+
+
+    <footer class="footer">
+
+        <div class="footer-container">
+
+
+            <div class="left-footer">
+              <div class="email" ><a >hr@e-ngineers.com</a></div>
+              <div class="url" ><a href="https://e-ngineers.com/">www.e-ngineers.com</a> </div>
+            </div>
+
+            <div class="right-footer" onsubmit="return false;">
+                <input class="CV-button" type="submit" value="Send your CV" onClick="window.location='https://t.me/itgaga_bot'">
+
+              <input id="open-button" class="request-button" type="submit"  value="Send your request">
+            </div>
+
+        </div>
+
+    <div class="footer-link-container">
+      <div class="link-border" ></div>
+
+      <a href="main" class="footer-link-block">
+        <img src="{{url_for('static', filename='img/index-arrow.svg')}}">
+        To the main page
+      </a>
+
+    </div>
+      </footer>
+
+      <div class="modal-overlay" id="modal-overlay"></div>
+      <div class="pop-up-container" id="modal" aria-hidden="true" aria-labelledby="modalTitle" aria-describedby="modalDescription" role="dialog" >
+        <button class="close-button" id="close-button" >X</button>
+
+
+ <div class="pop-up-form">
+
+          <div class="pu-label">Please fill the form</div>
+
+          <form action="/payroll" method="POST">
+            <label class="label-name">Your name
+              <input class="pa-input " name="name" type="text" placeholder="Name" required>
+            </label>
+
+            <label class="label-name">Your email
+              <input class="pa-input " name="email" inputmode="email" type="email" placeholder="Email" required>
+            </label>
+
+            <label class="label-name">Your phone
+              <input class="pa-input" name="tel" type="tel"  inputmode="tel" placeholder="Phone" required>
+            </label>
+
+            <label class="label-name">Theme of request
+            <div class="checkbox-level-container">
+                    <div class="checkbox-level-label">
+                        <input class="checkbox-level" id="payroll" value="payroll" type="radio" name= "req_type" required>
+                        <label for="payroll">Payroll</label>
+                    </div>
+                    <div class="checkbox-level-label">
+                        <input class="checkbox-level" id="outstaff" type="radio" value="outstaff" name= "req_type" required>
+                        <label for="outstaff">Outstaff</label>
+                    </div>
+            </div>
+            </label>
+            <label class="label-name">Your comment
+              <input class="pa-input" name="comment" type="text"   placeholder="Comment">
+            </label>
+
+            <input class=" pa-input-submit"  type="submit" id="pa-input-submit" value="Submit">
+          </form>
+
+          <div class="policy" >By submitting this form you agree to the <a href="https://telegra.ph/Privacy-Policy-05-15-18">privacy policy</a></div>
+
+
+        </div>
+
+      </div>
+
+      <script>
+        var modal = document.querySelector("#modal"),
+            modalOverlay = document.querySelector("#modal-overlay"),
+            closeButton = document.querySelector("#close-button"),
+            openButton = document.querySelector("#open-button");
+            submitClose = document.querySelector("#pa-input-submit");
+
+
+       openButton.addEventListener("click", function() {
+        modal.classList.toggle("closed");
+        modalOverlay.classList.toggle("closed");
+       });
+
+       modalOverlay.addEventListener("click", function() {
+        modal.classList.toggle("closed");
+        modalOverlay.classList.toggle("closed");
+       });
+
+       closeButton.addEventListener("click", function() {
+        modal.classList.toggle("closed");
+        modalOverlay.classList.toggle("closed");
+       });
+
+       submitClose.addEventListener("click", function() {
+        modal.classList.toggle("closed");
+        modalOverlay.classList.toggle("closed");
+       });
+
+       window.onkeydown = function( event ) {
+        if ( event.keyCode == 27 ) {
+          modal.classList.toggle("closed");
+          modalOverlay.classList.toggle("closed");
+        }
+      };
+
+
+
+      </script>
+
+    
+  </body>
+</html>

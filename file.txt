@@ -1,0 +1,17 @@
+{&#34;position_name&#34;: &#34;JavaScript Developer&#34;, &#34;english_level&#34;: &#34;C2&#34;, &#34;work_experience&#34;: 5, &#34;education&#34;: &#34;Economics&#34;, &#34;technology_stack&#34;: [&#34;JavaScript&#34;, &#34;TypeScript&#34;, &#34;React&#34;, &#34;Angular&#34;, &#34;Node.js&#34;, &#34;HTML&#34;], &#34;developer&#34;: true, &#34;analyst&#34;: true, &#34;soft_skills&#34;: [], &#34;past_experience&#34;: [{&#34;name&#34;: &#34;Frontend Developer&#34;, &#34;period&#34;: &#34;06.2016 - 04.2018&#34;, &#34;description&#34;: &#34;- Providing solutions for interaction with blockchain.
+- Integration of new cryptocurrencies into current project.
+- Support several projects on main platform.
+Stack: Backend (NodeJS, GraphQL, REST, HapiJS, KoaJS, ExpressJS, Docker ); Frontend (Javascript, ReactJS, EmberJS, CSS, SASS, HTML, Handlebars, SVG, ESlint );&#34;}, {&#34;name&#34;: &#34;Senior Frontend Developer&#34;, &#34;period&#34;: &#34;04.2018 - 03.2020&#34;, &#34;description&#34;: &#34;Providing first-class solutions in area of retail business using cutting-edge technologies for the biggest private bank. 
+- Creating and support a lot of applications in area of retail business.
+- Taking part in cross-functional and agile teams, which working by scrum.
+- Taking part in development of common library of components and Design-System for the Bank.
+- Making projects from the scratch and following development of them.
+- Taking part in distributing and prioritizing tasks.
+- Development and improvement inner open-source projects.
+Stack: Backend (NodeJS, REST, HapiJS, KoaJS, ExpressJS, Docker ).
+Frontend (Javascript, TypeScript, ReactJS, CSS, HTML ).&#34;}, {&#34;name&#34;: &#34;Senior Developer/Team Lead&#34;, &#34;period&#34;: &#34;03.2020 – till now&#34;, &#34;description&#34;: &#34;- Leading the developers units of up 10 persons size.
+- Providing POCs, POTs and MVPs for newly started frontend applications also making architectural decisions.
+- Taking part in making team-, style- and code-agreements.
+- Conducting training courses for junior developers.
+Stack: Backend (NodeJS, AWS, Express, Koa, Hapi, fastify ).
+Frontend (JavaScript, Typescript, React, Angular, Svelte, SolidJs ).&#34;}]}

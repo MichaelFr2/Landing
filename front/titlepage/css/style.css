@@ -1,0 +1,218 @@
+*{padding:0;margin:0;border:0;}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    height: 100%;
+}
+
+.header {    
+    margin: 124px auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    max-width: 1200px;
+}
+
+@media screen and (max-width: 650px) {
+ .header {
+    flex-direction: column;
+    }   
+}
+
+.hey_title{
+    font-size: 40px;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+.hey_text{
+    font-size: 40px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.top_container {
+    background-color: #E44900;
+}
+
+.intro {
+    font-size: 34px;
+    font-weight: 400;
+    line-height: 128%;
+    max-width: 1200px;
+    margin: 89px auto;
+}
+
+.container_team {
+    min-width: 1200px;
+    margin: 0 auto;
+    flex: 1 1 auto;
+ }
+
+
+.team_body {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 117px;
+ }
+.team_title {
+    font-size: 40px;
+    font-weight: 700;
+    margin-right: 150px;
+ }
+.team_list {
+    font-size: 40px;
+
+ } 
+
+ .team_list > img  {
+    margin: 25px 0;
+ }
+
+ @media screen and (max-width: 650px) {
+    .team_body {
+       flex-direction: column;
+    } 
+ }
+    /* ------------------------------------ */
+
+.cont_button {
+    min-width: 1200px;
+    margin: 0 auto 120px; 
+    }      
+    
+    .items_button { 
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;        
+    }
+    
+    @media screen and (max-width: 650px) {
+        .items_button {
+            flex-direction: column;            
+        }
+    }
+     
+    
+    
+    .button_outstaff {
+        background: url(/img/pointer.svg) no-repeat;
+        background-position: bottom 58px left 500px;
+        width: 580px;
+        height: 332px;
+        border-radius: 4px;
+        background-color: #E44900;
+    }
+    
+    .link-1 {
+        display: block;
+        text-decoration: none;
+        color: white;
+        font-size: 40px;
+        font-weight: 700;
+        padding: 229px 30px;
+    }
+
+    .button_payroll {
+        background: url(/img/pointer.svg) no-repeat;
+        background-position: bottom 58px left 500px;
+        width: 580px;
+        height: 332px;
+        border-radius: 4px;
+        background-color:#FF793A;
+    }
+    
+    .link-2 {
+        display: block;
+        text-decoration: none;
+        color: white;
+        font-size: 40px;
+        font-weight: 700;
+        padding: 229px 30px;
+    }
+ 
+     /*------------------- footer ----------------------*/
+     
+
+.footer {
+    background-color: #E44900;
+    min-height: 300px;
+}
+
+.footer-container {
+    max-width: 1200px;
+   margin: auto;
+}
+
+.form {
+    padding: 20px;    
+}
+
+::placeholder {
+    color: white;
+    opacity: 1;
+  }
+
+.input {
+    color: white;
+    width: 172px;
+    height: 48px;
+    font-size: 14px;
+    font-weight: 500;
+    padding-left: 16px;
+    border-radius: 4px;
+    border: none;
+    background-color: #FFFFFF6B;
+    margin: 3.5px;
+}
+
+.input-comment {
+    color: white;
+    width: 282px;
+    height: 48px;
+    font-size: 14px;
+    font-weight: 500;
+    padding-left: 16px;
+    border-radius: 4px;
+    border: none;
+    background-color: #FFFFFF6B;
+    margin: 3.5px;
+ }
+
+.input-submit {
+    color: black;
+    width: 172px;
+    height: 48px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 4px;
+    border: none;
+    background-color: white;
+    margin: 3.5px;
+ }
+
+.text-footer {
+    color: white;
+    font-size: 28px;
+    font-weight: 700;
+    padding-left: 20px;
+    padding-top: 40px;
+}
+
+.link-footer {
+    color: white;
+    font-style: 20px;
+    font-weight: 700;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-bottom: 40px;
+}
+
+/* ------------------------------------------------- */
+
+.wrapper {
+display: flex;
+flex-direction: column;
+min-height: 100%;
+}

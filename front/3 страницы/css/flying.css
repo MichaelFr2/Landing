@@ -1,0 +1,28 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #E44900;
+}
+/* --------------------------------- */
+
+.wrapper { 
+    display: flex;
+    flex-direction: column;
+}
+.main {
+    width: 1350px;
+    margin: 50px auto;
+    position: relative;
+   }
+.text {
+    font-size: 80px;
+    font-weight: 700;
+    color: white;
+    text-transform: uppercase;
+    margin-top: 362px;
+    margin-left: 120px;
+ }

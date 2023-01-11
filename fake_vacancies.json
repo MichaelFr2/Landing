@@ -1,0 +1,258 @@
+[
+{
+    "position_name": "Java Developer",
+    "english_level": "C2",
+    "position": "Middle",
+    "work_experience": 5,
+    "education": "",
+    "technology_stack": ["Java", "Spring", "Postgres", "JDBS", "WebSphere", "IBM DB2", "Docker"],
+    "developer": true,
+    "analyst": true,
+    "soft_skills": [],
+    "past_experience": [
+        {
+            "name": "Full Stack Developer",
+            "period": "06.2017 - 07.2019",
+            "description": ["Customer is a top 3 world's biggest Insuarance company. The project is an accounting system for insurance and risk management (claim processing, сlaims policy broker certificate etc). Huge distributed backend was implemented with exotic stack technology based on IBM products with numerous remote services (like Sanction check service, Security check service etc) and frontend implemented using ExtJs. Team is huge, international and distributed. Management is located in USA and Europe. All development was conducted via VDI on the client’s servers  Technologies:  Java, JavaScript, VDI, ExtJs, Rest, SOAP, JDBC, IBM FileNet, IBM WebSphere, IBM DB2, IBM Rational Team Concert, HP Application Life Cycle Management, Maven, Ant"]
+        },
+        {
+            "name": "Senior Java Developer/Tech Lead",
+            "period": "08.2019 – 09.2022",
+            "description": ["AML platform based on microservice architrecture and Axon framework. I have eliminated memory leak that have been annoying project during 8 months. Close work with DevOps department helped to improve performance and stability of the project from 1 to 50 ops   Techs: Java11/GraalVM, Spring boot, Spring cloud, Axon framework, AMQP, Docker, GoogleCloudPlatform, Postgres, Redis, Elastic"]
+        }
+    ]
+
+},
+
+{
+    "position_name": "Golang Developer",
+    "english_level": "C2",
+    "position": "Middle",
+    "work_experience": 5,
+    "education": "",
+    "technology_stack": ["Java", "Golang", "Android", "MongoDB", "Node.js", "MySQL", "Docker", "JavaScript"],
+    "developer": true,
+    "analyst": true,
+    "soft_skills": [],
+    "past_experience": [
+        {
+            "name": "Go developer",
+            "period": "02.2017 - 08.2019",
+            "description": ["Develop web-based resources as part of distributed international teams.\nParticipate in infrastructure support development as  infrastructure/sysOps team member. \ntasks examples:\n\n- develop CLI tool for fast Infrastructure-as-a-code (terraform) configuration files generation (Go, bash): when developers need to create infrastructure for their freshly-developed service they don't have to write all the configs manually but can just type several console commands\n\n- participate in development of notification tool for code lifecycle system (Go): integration between VCS repo, CI service, messengers etc\n\nmain technologies: Go, Java, RDBMS PostgreSQL, MySQL, AWS,  Terraform, Spring, Hibernate, JBoss/WildFly, bash && Python to write ops automation tools."]
+        },
+        {
+            "name": "SSenior Software Developer",
+            "period": "10.2019 – till now",
+            "description": ["Develop media content distribution platform, from client applications (Android AOSP (C ), Android SDK (Java, Kotlin)) to head-end services (Go, Java, AWS)"]
+        }
+    ]
+
+},
+
+{
+    "position_name": "Frontend Developer",
+    "english_level": "C2",
+    "position": "Middle",
+    "work_experience": 5,
+    "education": "Economics",
+    "technology_stack": ["HTML", "CSS", "JavaScript", "TypeScript", "Node.js", "React"],
+    "developer": true,
+    "analyst": true,
+    "soft_skills": [],
+    "past_experience": [
+        {
+            "name": "Senior Frontend Developer",
+            "period": "02.2020 – till now",
+            "description": ["- Developed revenue-boosting web-to-app solutions for subscription-based health & fitness apps.\n- Built a brand new cross-platform app for tracking football statistics using React Native.\n- Oversaw a\nteam of 2 other front end developers with the responsibility of mentorship and conducting code reviews.\nStack: TypeScript · HTML · CSS (SASS) · React · React Native · Next.js · MobX · Apollo · GraphQL · Jest."]
+        },
+        {
+            "name": "Full stack Developer",
+            "period": "12.2018 - 01.2020",
+            "description": ["- Brought countless features, updates and optimizations to an anonymous messaging service (web front end, Node.js back end, 30000+ DAU); worked with product managers to design and implement new monetization strategies based on premium features, which turned into the main revenue source.\n- Built a brand new iOS React Native app for the anonymous messaging service, increasing the active user base by more than 15%.\n- Developed a Node.js back end for an end-to-end encrypted messaging app, which grew to welcome 2000+ DAU.\n- Built a React Native app for an internal task tracker and worked on other internal tools boosting the team’s productivity.\nStack: JavaScript · TypeScript · HTML · CSS · React · React Native · MobX · jQuery · Node.js · PHP · MySQL · PostgreSQL · Redis · Go"]
+        },
+        {
+            "name": "Frontend Developer",
+            "period": "03.2017 - 12.2018",
+            "description": ["- Developed a React front end of a pioneering B2B marketplace for construction-related products.\n- Led a development team with 3 other engineers.Stack: JavaScript · HTML · CSS · React"]
+        }
+    ]
+
+},
+
+{
+    "position_name": "C/C++ Developer",
+    "english_level": "C2",
+    "position": "Middle",
+    "work_experience": 8,
+    "education": "Economics",
+    "technology_stack": ["C/C++", "Java", "Linux", "Python", "Oracle"],
+    "developer": true,
+    "analyst": true,
+    "soft_skills": [],
+    "past_experience": [
+        {
+            "name": "C++ Developer",
+            "period": "03.2014 - 02.2016",
+            "description": ["- Developing software for TV and set-top boxes.\n- Porting open-source software to TV platforms.\n- Adopting WebKit-based engines (WebKitGTK, Chromium and QtWebEngine).\n\nPlatforms: Linux (ARM and MIPS), primary languages: C/C++"]
+        },
+        {
+            "name": "C++ Middle Developer",
+            "period": "03.2016 - 09.2018",
+            "description": ["- Worked on the application for displaying various types of electronic maps and drawing graphic information onto them.\n- Designed and implemented an application for internal use. The app is a kind of IDE to create conventional signs and their classifications."]
+        },
+        {
+            "name": "C++ Senior Developer/Team Lead",
+            "period": "10.2018 – till now",
+            "description": ["- As a software engineer, I have implemented a number of the largest and most complicated features of our video service application for set-top boxes, which I had worked on since the initial concept phase, playing a major role in the development life cycle.\n- As a team lead, I managed day-to-day activities of the team of 7 developers to deliver new features to our 7+ million users every 2 weeks."]
+        }
+    ]
+
+},
+
+{
+    "position_name": "C# Developer",
+    "english_level": "C2",
+    "position": "Middle",
+    "work_experience": 6,
+    "education": "Economics",
+    "technology_stack": ["C#", "C", "MSSQL", "PostgreSQL", "RabbitMQ", ".NET"],
+    "developer": true,
+    "analyst": true,
+    "soft_skills": [],
+    "past_experience": [
+        {
+            "name": "C# Middle Developer",
+            "period": "08.2016 - 02.2018",
+            "description": ["- Developed several REST api application for existing projects\n- Designed and implemented a service for sending email message (smtp)on a micro-service architecture\n- Supporting web-app (.net core + vue.js)\n- Unit-testing"]
+        },
+        {
+            "name": "C# Senior Developer",
+            "period": "04.2018 - 09.2019",
+            "description": ["- Implemented integrations with external systems\n- Implemented a new scoring algorithm for “credit conveyor”\n- Implemented a new algorithm for parsing TC from incoming applications in the “credit conveyor”\n- Implemented a new algorithm for verification of legal entities in the “credit conveyor”"]
+        },
+        {
+            "name": "C# Senior Developer/Team Lead",
+            "period": "09.2019 – till now",
+            "description": ["- Leading the team of 4 developers\n- Requirements decomposition, sprint planning for the development team\n- Estimation of labor costs, design and code review of new functionality in the division\n- Monitoring of implementation deadlines\n- Interviewing and onboarding new employees\n\nProposed and implemented initiatives in the “credit conveyor” software package\n- error handling model refactoring to improve fault tolerance\n- logging model refactoring"]
+        }
+    ]
+
+},
+
+{
+    "position_name": "iOS Developer",
+    "english_level": "C2",
+    "position": "Middle",
+    "work_experience": 5,
+    "education": "Economics",
+    "technology_stack": ["Swift", "iOS", "Xcode", "SwiftUI", "Cocoa Pods", ".Rxswift", "Core Data", "Git"],
+    "developer": true,
+    "analyst": true,
+    "soft_skills": [],
+    "past_experience": [
+        {
+            "name": "iOS Developer",
+            "period": "10.2019 – currently",
+            "description": ["Working in a team of four iOS developers, presently focused on a huge superApp with seven (7) separated modules that could each be classified as a separate application.  Adding new modules, building layouts programmatically using snapkit, actively using MVVM-C for Architecture, Swinject for dependecy injection, Lottie for animation, Co-ordinators for flow, Rxswift, RxCocoa and RxdataSources which i currently use to build highly customizable Tableviews with sectioned data.\nFixing bugs, adding new features, refactoring and working on assigned tasks on Git."]
+        },
+        {
+            "name": "iOS Developer",
+            "period": "05.2017 - 09.2019",
+            "description": ["Participated in the development and refactoring of over 15 client’s app with some having thousands of end users.\n Developed, improved and maintained UI using Storyboards and AutoLayout constraints.\nWorked with services team to integrate new RESTful web services for various features and functionality.\nWorked on Cocoa-Pods to implement third-party frameworks used in implementing key features of the application.\n\nWorking with JSON inputs to pull the data from backend and display it on the app using URL Session"]
+        }
+    ]
+
+},
+
+{
+    "position_name": "JavaScript Developer",
+    "english_level": "C2",
+    "position": "Middle",
+    "work_experience": 5,
+    "education": "Economics",
+    "technology_stack": ["JavaScript", "TypeScript", "React", "Angular", "Node.js", "HTML"],
+    "developer": true,
+    "analyst": true,
+    "soft_skills": [],
+    "past_experience": [
+        {
+            "name": "Frontend Developer",
+            "period": "06.2016 - 04.2018",
+            "description": ["- Providing solutions for interaction with blockchain.\n- Integration of new cryptocurrencies into current project.\n- Support several projects on main platform.\nStack: Backend (NodeJS, GraphQL, REST, HapiJS, KoaJS, ExpressJS, Docker ); Frontend (Javascript, ReactJS, EmberJS, CSS, SASS, HTML, Handlebars, SVG, ESlint );"]
+        },
+        {
+            "name": "Senior Frontend Developer",
+            "period": "04.2018 - 03.2020",
+                "description": ["Providing first-class solutions in area of retail business using cutting-edge technologies for the biggest private bank. \n- Creating and support a lot of applications in area of retail business.\n- Taking part in cross-functional and agile teams, which working by scrum.\n- Taking part in development of common library of components and Design-System for the Bank.\n- Making projects from the scratch and following development of them.\n- Taking part in distributing and prioritizing tasks.\n- Development and improvement inner open-source projects.\nStack: Backend (NodeJS, REST, HapiJS, KoaJS, ExpressJS, Docker ).\nFrontend (Javascript, TypeScript, ReactJS, CSS, HTML )."]
+        },
+        {
+            "name": "Senior Developer/Team Lead",
+            "period": "03.2020 – till now",
+            "description": ["- Leading the developers units of up 10 persons size.\n- Providing POCs, POTs and MVPs for newly started frontend applications also making architectural decisions.\n- Taking part in making team-, style- and code-agreements.\n- Conducting training courses for junior developers.\nStack: Backend (NodeJS, AWS, Express, Koa, Hapi, fastify ).\nFrontend (JavaScript, Typescript, React, Angular, Svelte, SolidJs )."]
+
+        }
+    ]
+
+},
+
+{
+    "position_name": "Kotlin Developer",
+    "english_level": "C2",
+    "position": "Middle",
+    "work_experience": 5,
+    "education": "Economics",
+    "technology_stack": ["Kotlin", "Kafka", "AWS", "MongoDB", "Elasticsearch", "Docker", "Blockchain", "Spring"],
+    "developer": true,
+    "analyst": true,
+    "soft_skills": [],
+    "past_experience": [
+        {
+            "name": "Senior Backend Developer",
+            "period": "10.2021– currently",
+                "description": ["NFT marketplace\nFully remote, Scrum process\nDevelop Ethereum blockchain -> Backend interaction\nTech stack: Kotlin, MongoDB, Elasticsearch, Ethereum, Blockchain, Spring Boot."]
+        },
+        {
+            "name": "Senior Software Developer",
+            "period": "02.2020 - 09.2021",
+            "description": ["Trading\nDevelopment of a trading platform for the European market. The platform provides opportunities to buy/sell stocks or fractional parts of shares, to create limit orders, to calculate fees, to reflect the runtime price changes for financial instruments, to pay div-idends and another functionality.\n\nTech stack: Kotlin, Spring (Boot, Config-Server), PostgreSQL, Liquibase, Kotlin Exposed, Kotlin Corutines, gRPC, Kafka, Avro, Protobuf, Gradle, Docker, Kuber-netes, AWS, Swagger, Gitlab, Consul, Helm, Kibana, Redash, Grafana, Jira, Conflu-ence, Notion, Allure, Microservice"]
+        }
+    ]
+
+},
+
+{
+    "position_name": "Ruby on Rails Developer",
+    "english_level": "C2",
+    "position": "Middle",
+    "work_experience": 8,
+    "education": "Economics",
+    "technology_stack": ["RoR", "Ruby", "SQL", "PostgreSQL", "JavaScript", "jQuery"],
+    "developer": true,
+    "analyst": true,
+    "soft_skills": [],
+    "past_experience": [
+        {
+            "name": "Team Lead",
+            "period": "05.2014 - 04.2016",
+            "description": ["Leading a team of web developers. Developing a web platform for online learning from the very beginning using Ruby on Rails and Backbone.js. Setting development processes including code review, CI, QA.\n- Developing platforms for online learning.\n- Building architecture of application and development environment.\n- API integration, system administration."]
+        },
+        {
+            "name": "Senior Ruby on Rails Developer",
+            "period": "03.2016 - 02.2020",
+            "description": ["Full stack development of cloud management solutions based on KVM and Xen virtual machines.\n- Support of core rails application\n- Implemented new features like: live virtual machines and storage migrations, migrations from Xen to KVM, IOPS limiting, CPU quoting, TRIM for thin disks provisioning, AutoHealing feature for storage\n- Participated in: development of cloud boot hypervisors, storage integration, microvisors integration."]
+        },
+        {
+            "name": "Senior Ruby on Rails Developer",
+            "period": "03.2016 - 02.2020",
+            "description": ["- API for mobile applications\n- Implemented temporary tokens for authentication\n- Implemented requests rate limitting and reCAPTCHA support\n- Requests/DBQueries performance optimization\n- Developing admin platform for inner users\n- Implemented http security headers\n- Integration with third party services (App Store, Google Play, Google Cloud, Zendesk, etc)\n- Code Review\nTechnologies used: Ruby, Ruby on Rails, ActiveAdmin, RailsAdmin, PostgreSQL, Redis, Sidekiq, Heroku, Rspec, FactoryBot, Haml, Sass, Bootstrap."]
+        }
+    ]
+
+},
+
+
+
+
+
+]
+

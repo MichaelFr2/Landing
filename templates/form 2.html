@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href= "{{ url_for('static', filename='css/form/form.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="wrapper">
+        <header>
+            <div class="header-container">
+                <div class="header-text">
+                    <div>Goose find me</div>
+                    <div>the following:</div>
+                </div>
+                <div class="header-img">
+                    <img src="{{url_for('static', filename='img/goose.svg')}}" alt="goose-2">
+                </div>
+            </div>
+        </header>
+
+        <main class="main-container">
+
+            <form class="form" action="/form" method="POST">
+                <label class="label-name">Your name
+                    <input class="input input-name" required name="name" type="text" placeholder="Your name">
+                </label>
+
+                <label class="label-company">Your company
+                    <input class="input input-company" required type="text" name="company" placeholder="Your company">
+                </label>
+                
+                <div class="eng-level">
+                    <label>English level
+                        <select class="select-level" name="english_level">
+                            <option value="level-a1">A1</option>
+                            <option value="level-a2">A2</option>
+                            <option value="level-a2">B1</option>
+                            <option value="level-a2">B2</option>
+                            <option value="level-a2">C1</option>
+                            <option value="level-a2">C2</option>
+                        </select>
+                    </label>
+                </div>
+
+                <p class="skills">Required skills</p>           
+
+                <div class="checkbox-container" id="main_menu"> 
+                    {% for option in menu['main'].keys() %}
+                        <label class="checkbox-label">
+                            {% if menu['main'][option] not in menu.keys() %}
+                                <input class="checkbox" value="{{ menu['main'][option] }}" onclick="update_menu_buttons()" name="skill_checked" type="radio">
+                                <span class="checkbox-text">{{ option }}</span>
+                            {% else %}
+                                <span class="checkbox-text" id="{{ menu['main'][option] }}">{{ option }}</span>
+                            {% endif %}
+                        </label>
+                    {%endfor%}   
+                </div>
+
+                <div class="checkbox-container" id="developer_menu"> 
+
+                    <label class="checkbox-label">
+                            <span id="back_to_main_menu_1" class="checkbox-text">Back</span>
+                    </label>
+
+                    {% for option in menu['developer'].keys() %}
+                        <label class="checkbox-label">
+                            <input class="checkbox developer-checkbox" value="{{ menu['developer'][option] }}" name="skill_checked" type="radio">
+                            <span class="checkbox-text">{{ option }}</span>
+                        </label>
+                    {%endfor%}   
+                </div> 
+
+                <div class="checkbox-container" id="analyst_menu"> 
+
+                    <label class="checkbox-label">
+                            <span id="back_to_main_menu_2" class="checkbox-text">Back</span>
+                    </label>
+
+                    {% for option in menu['analyst'].keys() %}
+                        <label class="checkbox-label">
+                            <input class="checkbox analyst-checkbox" value="{{ menu['analyst'][option] }}" name="skill_checked" type="radio">
+                            <span class="checkbox-text">{{ option }}</span>
+                        </label>
+                    {%endfor%}   
+                </div>
+
+        <br><br>
+        <label class="label-qty">How many people do you need
+            <input class="input input-qty" required type="text" name="quantity" placeholder="Put the number from 1 to 100">
+        </label>
+
+                <p class="p-level">What level are you looking for?</p>
+        <div class="checkbox-level-container">
+                <label class="checkbox-level-label">
+                    <input class="checkbox-level" name="position" value="middle" type="radio" required>
+                    <span class="checkbox-level-text">Middle</span>
+                </label>
+                <label class="checkbox-level-label">
+                    <input class="checkbox-level" name="position" value="senior" type="radio" required>
+                    <span class="checkbox-level-text">Senior</span>
+                </label>
+        </div>
+                <div class="submit-container">
+                    <input class="input-submit" type="submit" value="Submit">
+                </div>
+            </form>
+        </main>
+        
+        <footer class="footer"></footer>
+    </div>
+
+    <script type="text/javascript">
+        function display_analyst() {
+            document.getElementById("developer_menu").style.display = "none";
+            document.getElementById("analyst_menu").style.display = "inline-block";
+            document.getElementById("main_menu").style.display = "none";
+            document.getElementsByClassName("skills")[0].innerHTML = "Required skils (Analyst)"
+
+        }
+
+        function display_developer() {
+            document.getElementById("developer_menu").style.display = "inline-block";
+            document.getElementById("analyst_menu").style.display = "none";
+            document.getElementById("main_menu").style.display = "none";
+            document.getElementsByClassName("skills")[0].innerHTML = "Required skils (Developer)"
+        }
+
+        function display_main() {
+            document.getElementById("developer_menu").style.display = "none";
+            document.getElementById("analyst_menu").style.display = "none";
+            document.getElementById("main_menu").style.display = "inline-block";
+            document.getElementsByClassName("skills")[0].innerHTML = "Required skils"
+        }
+
+        function update_menu_buttons(){
+            // document.getElementById("developer_menu").style.display = "none";
+            // document.getElementById("analyst_menu").style.display = "none";
+            // document.getElementById("main_menu").style.display = "inline-block";
+            // document.getElementsByClassName("skills")[0].innerHTML = "Required skils"
+
+            document.getElementById("analyst").style.background = 'none';
+            document.getElementById("analyst").style.color = 'black';
+            document.getElementById("developer").style.background = 'none';
+            document.getElementById("developer").style.color = 'black';
+        }
+
+        document.getElementById("back_to_main_menu_1").onclick = function() {
+            display_main();
+            DeveloperSelected();
+        }
+
+        document.getElementById("back_to_main_menu_2").onclick = function() {
+            display_main();
+            AnalystSelected();
+        }
+
+        document.getElementById("developer").onclick = function() {
+            display_developer();
+        }
+
+        document.getElementById("analyst").onclick = function() {
+            display_analyst();
+        }
+
+        function DeveloperSelected() {
+            selected = false;
+
+            for (let i=0; i < document.querySelectorAll('.developer-checkbox').length; i++) {
+                if (document.getElementsByClassName('developer-checkbox')[i].checked) {
+                    selected = true;
+                }
+            }
+
+            if (selected) {
+                document.getElementById("developer").style.background = '#e44900';
+                document.getElementById("developer").style.color = 'white';
+                document.getElementById("analyst").style.background = 'none';
+                document.getElementById("analyst").style.color = 'black';
+            }
+            else {
+                document.getElementById("developer").style.background = 'none';
+                document.getElementById("developer").style.color = 'black';
+            }
+        }
+
+        function AnalystSelected() {
+            selected = false;
+
+            for (let i=0; i < document.querySelectorAll('.analyst-checkbox').length; i++) {
+                if (document.getElementsByClassName('analyst-checkbox')[i].checked) {
+                    selected = true;
+                }
+            }
+
+            if (selected) {
+                document.getElementById("analyst").style.background = '#e44900';
+                document.getElementById("analyst").style.color = 'white';
+                document.getElementById("developer").style.background = 'none';
+                document.getElementById("developer").style.color = 'black';
+            }
+            else {
+                document.getElementById("analyst").style.background = 'none';
+                document.getElementById("analyst").style.color = 'black';
+            }
+        }
+
+    </script>
+</body>
+</html>

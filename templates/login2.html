@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Auth</title>
+</head>
+<body>
+
+    <center>
+        {% if error %}
+            <p><strong>Error</strong>: {{error}} </p>
+        {% endif %}
+
+        <form action="/login", method="POST">
+            <label for="login"><b>Login</b></label>
+            <input type="text" placeholder="Enter email" name="login" id="login" required>
+
+            <label for="password"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="password" id="password" required>
+
+            <button type="submit" class="enterbtn">Enter</button>
+        </form>
+    </center>
+
+</body>
+</html>

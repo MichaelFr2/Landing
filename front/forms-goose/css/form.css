@@ -1,0 +1,213 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    height: 100%;
+}
+
+/* ---------------------- */
+
+header {
+    background-color: #E44900;
+}
+
+.header-container {
+    max-width: 786px;
+    height: 462px;
+    position: relative;
+    margin: 0 auto;
+}
+.header-text {
+    position: absolute;
+    margin-top: 200px;
+    font-size: 60px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.header-img {
+    position: absolute;
+    margin-left: 480px;
+    margin-top: 81px;
+}
+/* -------------------------- */
+
+.main-container {
+    background-color: #fff;
+    
+    max-width: 786px;
+    margin: auto;
+    padding-top: 72px;
+    padding-bottom: 90px;
+    position: relative;
+    color: #5A5A5A;
+    font-style: 18px;
+    font-weight: 700;
+    
+    flex: 1 0 auto;
+}
+/* --------------------------- */
+
+
+
+.input {
+    display: block;
+    color: black;
+    width: 100%;
+    height: 61px;
+    font-size: 14px;
+    font-weight: 500;
+    padding-left: 16px;
+    border-radius: 4px;
+    border: none;
+    background-color: #F4F4F4;
+    margin: 10px auto 37px;
+}
+/* ------------------------------- */
+.eng-level { 
+    margin: 10px 0;
+}
+.select-level {
+    display: block;
+    width: 100%;
+    height: 61px;
+    font-size: 14px;
+    font-weight: 400;
+    padding-left: 16px;    
+    border-radius: 4px;
+    margin: 10px 0;
+}
+/* ------------------------------------- */
+.skills { 
+
+    margin: 37px 0 10px;
+
+}
+.checkbox-container {
+    
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.checkbox-label {    
+    margin: 10px auto;    
+}
+
+.checkbox {
+    display: none;
+}
+
+.checkbox-text {
+    display: inline-block;
+    width: 250px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 4px;
+    position: relative;
+    cursor: pointer;
+    border: 1px solid black;
+    text-align: center;
+    font-weight: 400;
+    }
+
+.checkbox-text::before {
+    content: "";
+    color: white;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #e44900;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+
+.checkbox:checked + .checkbox-text::before {
+    opacity: 1;
+}
+
+/*.chk-text1::before {
+    content: "Developer";
+}
+.chk-text2::before {
+    content: "Analyst";
+}
+.chk-text3::before {
+    content: "QA";
+}
+.chk-text4::before {
+    content: "UX/UI";
+}
+.chk-text5::before {
+    content: "DevOps";
+}
+.chk-text6::before {
+    content: "Tech Manager";
+}
+.chk-text7::before {
+    content: "Product Manager";
+}
+.chk-text8::before {
+    content: "Data Scientist";
+}
+.chk-text9::before {
+    content: "Other";
+}*/
+
+/*input:checked + span:before {
+    content: "✓ ";
+}*/
+
+/* ---------------------------- */
+.p-level{
+    font-size: 20px;
+    font-weight: 700;
+    margin: 20px 0;
+}
+.checkbox-level-container {
+   
+ }
+.checkbox-level-label { 
+    display: block;
+    margin-bottom: 20px;
+}
+.checkbox-level { }
+.checkbox-level-text { }
+
+
+
+/* --------------------------- */
+
+.submit-container{ }
+
+.input-submit {
+    width: 100%;
+    color: white;
+    height: 48px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 4px;    
+    background-color: #E44900;    
+ }
+
+ 
+ .footer {   
+    margin-top: auto;
+     height: 150px;
+     background-color: #E44900;     
+ }
+
+/* ------------------------ */
+
+ .wrapper {       
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;    
+    }

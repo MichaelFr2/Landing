@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href= "{{ url_for('static', filename='css/resume-page/resume-page.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>Resume-page</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <div class="header-container">
+                <div class="img-header">
+                    <img src="{{url_for('static', filename='img/head-goose.svg')}}" alt="head-goose">
+                </div>
+                <div class="text-header">GAGA-goose
+                <div class="text-header-2">Curriculum Vitae</div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="main">
+          
+
+           
+            <div class="lt-container">
+
+                <div class="label-position">Position nfffffffffffffffffffame:</div>
+                <div class="label-txt">{{ vacancy["position_name"] }}</div>
+
+                <div class="label-position">English level:</div>
+                <div class="label-txt">{{ vacancy["english_level"] }}</div>
+
+                <form action="#">
+                    
+                <!-- <label>English level:</label>
+                    <select>
+
+                        {% for english_level in options["english_level"] %}
+                            {% if english_level == vacancy["english_level"] %}
+                                <option selected="selected">{{ english_level }}</option>
+                            {% else %}
+                                <option>{{ english_level }}</option>
+                            {% endif %}
+                        {%endfor%}   
+
+    
+                    </select>
+                 -->
+                
+                <label>Work experience (years):</label>
+                    <select>
+                        {% for work_experience in options["work_experience"] %}
+                            {% if work_experience == vacancy["work_experience"] %}
+                                <option selected="selected">{{ work_experience }}</option>
+                            {% else %}
+                                <option>{{ work_experience }}</option>
+                            {% endif %}
+                        {%endfor%}   
+                    </select>
+                
+
+                <label>Education:</label>
+                    <select>
+                        {% for education in options["education"] %}
+                            {% if education == vacancy["education"] %}
+                                <option selected="selected">{{ education }}</option>
+                            {% else %}
+                                <option>{{ education }}</option>
+                            {% endif %}
+                        {%endfor%}   
+                    </select>
+                
+
+
+
+                </form>
+
+
+
+
+            </div>
+
+
+            <div class="rt-container">
+                <div class="label-emp-history">Employment History :</div>
+
+                    {% for past_job in vacancy["past_experience"] %}
+                        <p class="up-row">{{ past_job["name"] }}</p>
+                        <p class="date">{{ past_job["period"] }} </p>
+
+                        <li>
+                            {{ past_job["description"] | replace("\n", '<br>') | safe }}
+                        </li>
+                    {%endfor%}  
+
+                <br>
+
+                <div class="label-stack">
+                    Technology Stack:
+                </div>
+
+                <div class="block-stack">
+                    {% for skill in vacancy["technology_stack"] %}
+                        <div class="item-stack">{{ skill }}</div>
+                    {%endfor%}   
+                </div>
+
+                <textarea name="" id="" cols="80" rows="3" placeholder="Add +"></textarea>
+                    
+                <div class="label-skills">soft skills:</div>
+
+                <textarea name="" id="" cols="80" rows="3" placeholder="Add +"></textarea>
+
+                <div class="label-languages">other languages:</div>
+                
+                <textarea name="" id="" cols="80" rows="3" placeholder="Add +"></textarea>
+                
+
+
+            </div>
+           
+        </div>
+
+        <footer class="footer"></footer>
+
+    </div>
+</body>
+</html>

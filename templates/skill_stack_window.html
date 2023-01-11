@@ -1,0 +1,7 @@
+{% for skill in skill_section %}
+    <div class="item-stack">
+        <span onclick="DeleteSkills('{{ section }}', '{{ skill }}')" class="closebtn">×</span>
+        {{ skill }}
+    </div>
+{%endfor%}
+

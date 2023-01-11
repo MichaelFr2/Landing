@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="wrapper">
+        <header>
+            <div class="header-container">
+                <div class="header-text">
+                    <div>Goose find me</div>
+                    <div>the following:</div>
+                </div>
+                <div class="header-img">
+                    <img src="img/goose-2.svg" alt="goose-2">
+                </div>
+            </div>
+        </header>
+
+        <main class="main-container">
+
+            <form class="form" action="#">
+                <label class="label-name">Your name
+                    <input class="input input-name" type="text" placeholder="Your name">
+                </label>
+
+                <label class="label-company">Your company
+                    <input class="input input-company" type="text" placeholder="Your company">
+                </label>
+                <label class="label-qty">How many people do you need
+                    <input class="input input-qty" type="text" placeholder="Put the number from 1 to 100">
+                </label>
+                
+                <div class="eng-level">
+                    <label>English level
+                        <select class="select-level">
+                            <option value="level-a1">Beginner</option>
+                            <option value="level-a2">Pre-Intermediate</option>
+                            <option value="level-b1">Intermediate</option>
+                            <option value="level-b2">Upper-Intermediate</option>
+                            <option value="level-c1">Advanced</option>
+                        </select>
+                    </label>
+                </div>
+
+                <p class="skills">Required skills</p>           
+
+                <div class="checkbox-container"> 
+                    <label class="checkbox-label">
+                        <input class="checkbox" type="checkbox">
+                        <span class="checkbox-text">Developer</span>
+                    </label>
+                    
+                    <label class="checkbox-label">
+                        <input class="checkbox" type="checkbox">
+                        <span class="checkbox-text">Analyst</span>
+                    </label>
+                    
+                    <label class="checkbox-label">
+                        <input class="checkbox" type="checkbox">
+                        <span class="checkbox-text">QA</span>
+                    </label>
+                    
+                    <label class="checkbox-label">
+                        <input class="checkbox" type="checkbox">
+                        <span class="checkbox-text">UX/UI</span>
+                    </label>
+                    
+                    <label class="checkbox-label">
+                        <input class="checkbox" type="checkbox">
+                        <span class="checkbox-text">DevOps</span>
+                    </label>
+                    
+                    <label class="checkbox-label">
+                        <input class="checkbox" type="checkbox">
+                        <span class="checkbox-text">Tech Manager</span>
+                    </label>
+                    
+                    <label class="checkbox-label">
+                        <input class="checkbox" type="checkbox">
+                        <span class="checkbox-text">Product Manager</span>
+                    </label>
+                    
+                    <label class="checkbox-label">
+                        <input class="checkbox" type="checkbox">
+                        <span class="checkbox-text">Data Scientist</span>
+                    </label>
+                    
+                    <label class="checkbox-label">
+                        <input class="checkbox" type="checkbox">
+                        <span class="checkbox-text">Other</span>
+                    </label>
+                </div>
+
+                <p class="p-level">What level are you looking for?</p>
+        <div class="checkbox-level-container">
+            <label class="checkbox-level-label">
+                <input class="checkbox-level" type="checkbox">
+                <span class="checkbox-level-text">Junior</span>
+            </label>
+            <label class="checkbox-level-label">
+                <input class="checkbox-level" type="checkbox">
+                <span class="checkbox-level-text">Middle</span>
+            </label>
+            <label class="checkbox-level-label">
+                <input class="checkbox-level" type="checkbox">
+                <span class="checkbox-level-text">Senior</span>
+            </label>
+        </div>
+                <div class="submit-container">
+                    <input class="input-submit" type="submit" value="Submit">
+                </div>
+            </form>
+        </main>
+        
+        <footer class="footer"></footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href= "{{ url_for('static', filename='css/form/form.css') }}">
+    <link rel="icon" href="/static/img/goose-wh-circle.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="wrapper">
+        <header>
+            <div class="header-container">
+                <div class="header-text">
+                    Goose find me<br>the following:
+                </div>
+                <div class="header-img">
+                    <img src="{{url_for('static', filename='img/goose-3.svg')}}" alt="goose-3">
+                </div>
+            </div>
+        </header>
+
+
+        <main class="main-container">
+
+            <form class="form" action="/form" method="POST">
+                <label class="label-name">Your name
+                    <input class="input input-name" required type="text" placeholder="Your name">
+                </label>
+
+                <label class="label-company">Your company
+                    <input class="input input-company" required type="text" placeholder="Your company">
+                </label>
+                
+
+                <p class="skills">Required skills</p>           
+
+                <div class="checkbox-container" id="main_menu">
+
+                    <label class="checkbox-label">
+
+
+                        <span class="checkbox-text develop" id="developer">
+                            <div class="chk-label-d">Developer</div>
+                            <img  src="{{url_for('static', filename='img/arrow-select.svg')}}" alt="arrow">
+                        </span>
+
+                        <span class="checkbox-text analyst" id="analyst">
+                            <div class="chk-label-a">Analyst</div>
+                            <img src="{{url_for('static', filename='img/arrow-select.svg')}}" alt="arrow">
+                        </span>
+
+
+                    </label>
+                    {% for option in menu['main'].keys() %}
+                        <label class="checkbox-label">
+                            {% if menu['main'][option] not in menu.keys() %}
+                                <input class="checkbox" value="{{ menu['main'][option] }}" onclick="update_menu_buttons()" name="skill_checked" type="radio">
+                                <span class="chk-text1 checkbox-text">{{ option }}</span>
+                            {% endif %}
+                        </label>
+                    {%endfor%}   
+                </div>
+
+                <div class="checkbox-container" id="developer_menu">
+                    <label class="checkbox-label">
+                        <span id="back_to_main_menu_1" class="checkbox-back">
+                            <img src="{{url_for('static', filename='img/back-arrow.svg')}}" alt="arrow">
+                            Back</span>
+                    </label>
+                    {% for option in menu['developer'].keys() %}
+                        <label class="checkbox-label">
+                            <input class="chk-text1 checkbox developer-checkbox" value="{{ menu['developer'][option] }}" name="skill_checked" type="radio">
+                            <span class="chk-text1 checkbox-text">{{ option }}</span>
+                        </label>
+                    {%endfor%}   
+                </div> 
+
+
+                <div class="checkbox-container" id="analyst_menu"> 
+
+                    <label class="checkbox-label">
+                        <span id="back_to_main_menu_2" class="checkbox-back">
+                            <img src="{{url_for('static', filename='img/back-arrow.svg')}}" alt="arrow">
+                            Back</span>
+                    </label>
+                    {% for option in menu['analyst'].keys() %}
+                        <label class="checkbox-label">
+                            <input class="chk-text1 checkbox analyst-checkbox" value="{{ menu['analyst'][option] }}" name="skill_checked" type="radio">
+                            <span class="chk-text1 checkbox-text">{{ option }}</span>
+                        </label>
+                    {%endfor%}   
+                </div>
+
+
+                <div class="eng-level">
+                    <label class="eng-l">English level
+                        <select class="select-level">
+                            <option value="level-a1">A1</option>
+                            <option value="level-a2">A2</option>
+                            <option value="level-b1">B1</option>
+                            <option value="level-b2">B2</option>
+                            <option value="level-c1">C1</option>
+                            <option value="level-c2">C2</option>
+
+                        </select>
+                    </label>
+                </div>
+
+
+                <label class="label-qty">How many people do you need?
+                    <input class="input input-qty" type="text" inputmode="numeric"  pattern="[0-9]{1,100}" placeholder="Put the number from 1 to 100" required>
+                </label>
+                
+                <p class="p-level">What level are you looking for?</p>
+
+        <div class="checkbox-level-container">
+                    <div class="checkbox-level-label">
+                        <input class="checkbox-level" id="middle" value="middle" type="radio" name= "position" required>
+                        <label for="middle">Middle</label>
+                    </div>
+                    <div class="checkbox-level-label">
+                        <input class="checkbox-level" id="senior" type="radio" value="senior" name= "position" required>
+                        <label for="senior">Senior</label>
+                    </div>
+                </div>
+
+
+                <div class="submit-container">
+                    <input class="input-submit" type="submit" value="Submit">
+                </div>
+            </form>
+        </main>
+        
+        <footer class="footer"></footer>
+    </div>
+
+<script type="text/javascript">
+    function display_analyst() {
+        document.getElementById("developer_menu").style.display = "none";
+        document.getElementById("analyst_menu").style.display = "inline-block";
+        document.getElementById("main_menu").style.display = "none";
+        document.getElementsByClassName("skills")[0].innerHTML = "Required skils (Analyst)"
+
+    }
+
+    function display_developer() {
+        document.getElementById("developer_menu").style.display = "inline-block";
+        document.getElementById("analyst_menu").style.display = "none";
+        document.getElementById("main_menu").style.display = "none";
+        document.getElementsByClassName("skills")[0].innerHTML = "Required skils (Developer)"
+    }
+
+    function display_main() {
+        document.getElementById("developer_menu").style.display = "none";
+        document.getElementById("analyst_menu").style.display = "none";
+        document.getElementById("main_menu").style.display = "inline-block";
+        document.getElementsByClassName("skills")[0].innerHTML = "Required skils"
+    }
+
+    function update_menu_buttons(){
+        // document.getElementById("developer_menu").style.display = "none";
+        // document.getElementById("analyst_menu").style.display = "none";
+        // document.getElementById("main_menu").style.display = "inline-block";
+        // document.getElementsByClassName("skills")[0].innerHTML = "Required skils"
+
+        document.getElementById("analyst").style.background = 'none';
+        document.getElementById("analyst").style.color = 'black';
+        document.getElementById("developer").style.background = 'none';
+        document.getElementById("developer").style.color = 'black';
+    }
+
+    document.getElementById("back_to_main_menu_1").onclick = function() {
+        display_main();
+        DeveloperSelected();
+    }
+
+    document.getElementById("back_to_main_menu_2").onclick = function() {
+        display_main();
+        AnalystSelected();
+    }
+
+    document.getElementById("developer").onclick = function() {
+        display_developer();
+    }
+
+    document.getElementById("analyst").onclick = function() {
+        display_analyst();
+    }
+
+    function DeveloperSelected() {
+        selected = false;
+
+        for (let i=0; i < document.querySelectorAll('.developer-checkbox').length; i++) {
+            if (document.getElementsByClassName('developer-checkbox')[i].checked) {
+                selected = true;
+            }
+        }
+
+        if (selected) {
+            document.getElementById("developer").style.background = '#e44900';
+            document.getElementById("developer").style.color = 'white';
+            document.getElementById("analyst").style.background = 'none';
+            document.getElementById("analyst").style.color = 'black';
+        }
+        else {
+            document.getElementById("developer").style.background = 'none';
+            document.getElementById("developer").style.color = 'black';
+        }
+    }
+
+    function AnalystSelected() {
+        selected = false;
+
+        for (let i=0; i < document.querySelectorAll('.analyst-checkbox').length; i++) {
+            if (document.getElementsByClassName('analyst-checkbox')[i].checked) {
+                selected = true;
+            }
+        }
+
+        if (selected) {
+            document.getElementById("analyst").style.background = '#e44900';
+            document.getElementById("analyst").style.color = 'white';
+            document.getElementById("developer").style.background = 'none';
+            document.getElementById("developer").style.color = 'black';
+        }
+        else {
+            document.getElementById("analyst").style.background = 'none';
+            document.getElementById("analyst").style.color = 'black';
+        }
+    }
+
+</script>
+
+</body>
+</html>

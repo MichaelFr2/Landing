@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Auth</title>
+</head>
+<body>
+
+    <center>
+        {% if error %}
+            <p><strong>Error</strong>: {{error}} </p>
+        {% endif %}
+
+        <form action="/register", method="POST">
+            <label for="company_name"><b>Company name</b></label>
+            <input type="text" placeholder="Enter your company name" name="company_name" id="company_name" required>
+
+            <label for="login"><b>Login</b></label>
+            <input type="text" placeholder="Enter login" name="login" id="login" required>
+
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" id="email" required>
+
+            <label for="password"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="password" id="password" required>
+
+            <label for="password_repeat"><b>Repeat Password</b></label>
+            <input type="password" placeholder="Repeat Password" name="password-repeat" id="password_repeat" required>
+            <hr>
+
+            <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+            <a href="/login">Have an account</a>
+            <button type="submit" class="registerbtn">Register</button>
+        </form>
+    </center>
+
+</body>
+</html>

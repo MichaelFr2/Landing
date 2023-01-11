@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href= "{{ url_for('static', filename='css/form_AI.css') }}">
+    <link rel="icon" href="/static/img/goose-wh-circle.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>Form_AI</title>
+</head>
+<body>
+    <div class="wrapper">
+
+        <div class="main">
+            <div class="img-block">
+                <img src="{{url_for('static', filename='img/goose_circle.svg')}}" alt="goose_circle">
+                <div class="dots">
+                    Is typing        
+                    <div class="loading">...</div>  
+                </div>        
+            </div>
+            <div class="text-block link1 ">
+                And I'm the AI, quack! Long time no see!
+            </div>
+    
+            <div class="text-block link2">
+                Look at the CV I have chosen for you. It matches your request.            
+            </div>
+
+            <div class="block-zoom link2" onclick="window.location.href = '/suggested_vacancy';">
+                <img class="img-preview" src="{{url_for('static', filename='img/cv-preview.svg')}}" alt="preview">
+                <img class="img-zoom" src="{{url_for('static', filename='img/zoom.svg')}}" alt="zoom">
+
+            </div>
+
+            <div class="text-block link3 final">
+                If it suits you, nod. If not, modify the settings to fit your needs.
+            </div>
+        </div>
+
+        
+
+        <footer class="footer">
+        </footer>
+    </div>
+</body>
+</html>

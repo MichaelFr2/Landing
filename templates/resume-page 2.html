@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/kineticjs/5.2.0/kinetic.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.2/jquery.scrollTo.min.js"></script>
+    <script src="{{ url_for('static', filename='enjoyhint/enjoyhint.min.js') }}"></script>
+    <link href="{{ url_for('static', filename='enjoyhint/enjoyhint.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href= "{{ url_for('static', filename='css/resume-page/resume-page 2.css') }}">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>Resume-page</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <div class="header-container">
+                <div class="img-header" id="Ga">
+                    <img src="{{url_for('static', filename='img/head-goose.svg')}}" alt="head-goose">
+                </div>
+                <div class="text-header">GAGA-goose
+                <div class="text-header-2">Curriculum Vitae</div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="main">
+
+           
+            <div class="lt-container">
+
+                <div class="label-position">Position name:</div>
+                <div class="label-txt">{{ vacancy["position_name"] }}</div>
+
+                <div class="label-position">English level:</div>
+                <div class="label-txt eng-lev">{{ vacancy["english_level"] }}</div>
+
+                <form>
+                    
+                <!-- <label>English level:</label>
+                    <select>
+
+                        {% for english_level in options["english_level"] %}
+                            {% if english_level == vacancy["english_level"] %}
+                                <option selected="selected">{{ english_level }}</option>
+                            {% else %}
+                                <option>{{ english_level }}</option>
+                            {% endif %}
+                        {%endfor%}   
+
+    
+                    </select>
+                 -->
+                
+                <div id="work-exp">
+                <label>Work experience (years):</label>
+                    <select>
+                        {% for work_experience in options["work_experience"] %}
+                            {% if work_experience == vacancy["work_experience"] %}
+                                <option selected="selected">{{ work_experience }}</option>
+                            {% else %}
+                                <option>{{ work_experience }}</option>
+                            {% endif %}
+                        {%endfor%}   
+                    </select>
+                </div>
+                
+
+                <div id="edu">
+                <label >Education:</label>
+                    <select>
+                        {% for education in options["education"] %}
+                            {% if education == vacancy["education"] %}
+                                <option selected="selected">{{ education }}</option>
+                            {% else %}
+                                <option>{{ education }}</option>
+                            {% endif %}
+                        {%endfor%}   
+                    </select>
+                </div>
+                
+                </form>
+
+
+
+
+            </div>
+
+
+            <div class="rt-container">
+                <div class="label-emp-history">Employment History :</div>
+
+                    {% for past_job in vacancy["past_experience"] %}
+                        <p class="up-row">{{ past_job["name"] }}</p>
+                        <p class="date">{{ past_job["period"] }} </p>
+
+
+                        {% for row in past_job["description"] %}
+                            <li>
+                            {{ row | safe }}
+                            </li>
+                        {%endfor%}  
+
+                    {%endfor%}  
+
+                <br>
+
+                <div id="stack">
+
+                    <div class="label-stack">Technology Stack:</div>
+
+                        <div id="tech_skills_section" class="block-stack">
+                            <!-- for i in -->
+
+                        </div>
+
+                        <form>
+                            <input class="input input-name" type="text" id="tech_skill" placeholder="Add +">
+                            <div class="input-submit" id="update_tech_skill" >Add</div>
+                        </form>
+
+                </div>
+
+                <div id="s-skills">
+
+                    <div class="label-skills">Soft skills:</div>
+
+                    <div id="soft_skills_section" class="block-stack">
+                        <!-- for i in -->
+                    </div>
+                
+
+                    <form>
+                        <input class="input input-name" type="email" id="soft_skill" placeholder="Add +">
+                        <div class="input-submit" id="update_soft_skill" >Add</div>
+                    </form>
+                </div>
+
+
+                <div id="languages">
+                    <div class="label-languages">Other languages:</div>
+
+                    <div id="language_skills_section" class="block-stack">
+                        <!-- for i in -->
+                    </div>
+                    
+                    <form>
+                        <input class="input input-name" type="email" id="language_skll" placeholder="Add +">
+                        <div class="input-submit" id="update_language_skill" >Add</div>
+                    </form>
+                </div>
+
+
+                <div id="comment">
+                        <div class="label-comment">Write here your special comment:</div>
+                        
+                        <form onsubmit="return false;">
+                            <input class="input input-name" type="text" placeholder="Add +">
+                            <!-- <input class=" input-submit" type="submit" value="Submit"> -->
+                        </form>
+                </div>
+
+                    <button class="btn-sub" id="confirm" onclick="window.location.href = '/flying';">Nod</button>
+
+            </div>
+           
+        </div>
+
+<!--         <footer class="footer"></footer> -->
+
+    </div>
+
+{% if not tutorial_complete %}
+  <script src="{{ url_for('static', filename='js/script.js') }}"> </script>
+{% endif %}
+
+<script>
+
+    function AddSkill(section){
+
+        if (section == "technology_stack"){
+            var text = $("#tech_skill").val();
+            document.getElementById('tech_skill').value = "";
+        }
+        else if (section == "soft_skills"){
+            var text = $("#soft_skill").val();
+            document.getElementById('soft_skill').value = "";
+        }
+        else if (section == "language_skills"){
+            var text = $("#language_skll").val();
+            document.getElementById('language_skll').value = "";
+        }
+
+        
+
+        $.ajax({
+          url: "/add_skills",
+          type: "get",
+          data: {skill: text, section: section},
+          success: function(response) {
+            if (section == "technology_stack"){
+                $("#tech_skills_section").html(response); 
+            }
+            else if (section == "soft_skills"){
+                $("#soft_skills_section").html(response); 
+            }
+            else if (section == "language_skills"){
+                $("#language_skills_section").html(response); 
+            }
+          },
+          error: function(xhr) {
+            console.log(xhr);
+          }
+        });
+    }
+
+    AddSkill("technology_stack");
+    AddSkill("soft_skills");
+    AddSkill("language_skills");
+
+    document.getElementById('update_tech_skill').onclick = function() {
+        AddSkill("technology_stack");
+    };
+
+    document.getElementById('update_soft_skill').onclick = function() {
+        AddSkill("soft_skills");
+    };
+
+    document.getElementById('update_language_skill').onclick = function() {
+        AddSkill("language_skills");
+    };
+
+
+    
+    function DeleteSkills(section, skill){
+
+        $.ajax({
+          url: "/delete_skills",
+          type: "get",
+          data: {skill: skill, section},
+          success: function(response) {
+            if (section == "technology_stack"){
+                $("#tech_skills_section").html(response); 
+            }
+            else if (section == "soft_skills"){
+                $("#soft_skills_section").html(response); 
+            }
+            else if (section == "language_skills"){
+                $("#language_skills_section").html(response); 
+            }
+          },
+          error: function(xhr) {
+            console.log(xhr)
+          }
+        });
+    }
+
+</script>
+
+
+</body>
+</html>

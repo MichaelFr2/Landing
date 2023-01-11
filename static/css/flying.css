@@ -1,0 +1,42 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    cursor: url("../img/goose-pointer.svg") 
+    ,auto;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #E44900;
+    max-width: 100%;
+
+}
+
+/* --------------------------------- */
+
+.wrapper { 
+    display: flex;
+    flex-direction: column;
+
+}
+.main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 10%;
+    align-items: center;
+
+   }
+.text {
+    font-size:max(2.5em, min(2em, 5.333vw));
+    font-weight: 700;
+    color: white;
+    text-transform: uppercase;
+ }

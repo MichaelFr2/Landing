@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href= "{{ url_for('static', filename='css/login/login.css') }}">
+    <link rel="icon" href="/static/img/goose-wh-circle.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>Login</title>
+</head>
+<body>
+    <div class="wrapper">
+
+        <div class="main">
+            
+            <div class="image_goose">
+                <img src="{{url_for('static', filename='img/goose.svg')}}" alt="goose">
+            </div>
+            
+             {% if error %}
+                <p><strong>Error</strong>: {{error}} </p>
+            {% endif %}
+            
+            <div class="form-block">
+                  <div class="login-label">Log in</div>
+
+                  <form class="form" action="/login" method="POST">
+                        <input class="input input-name" type="email" inputmode="email" name="login" placeholder="Your email" required>
+                        <input class="input input-name" name="password" type="password" placeholder="Password" required>
+                        <input class=" input-submit" type="submit" value="Submit">
+                </form>
+                <div class="pass-rem">
+                <a class="text" href="">Forgot your password?</a>
+                </div>
+                <div class="hr-sect">OR</div>
+
+                <div class="button-google">
+                     <a class="link-1" href="" google>Log in with Google account</a>
+                </div>
+
+                <div class="text">
+                    Do not have an account?
+                    <a class="link-2" href="/registration">Sign up</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
