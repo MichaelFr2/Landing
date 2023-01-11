@@ -18,6 +18,7 @@
 </head>
 <body>
     <div class="wrapper">
+
         <div class="header">
             <div class="header-container">
                 <div class="img-header" id="Ga">
@@ -31,7 +32,7 @@
         </div>
 
         <div class="main">
-          
+
 
            
             <div class="lt-container">
@@ -44,17 +45,16 @@
                         <div class="label-position">English level:</div>
                         <div class="label-txt eng-lev">{{ vacancy["english_level"] }}</div>
                     </div>
-                
-                <form action="#">
-                
+
+<form action="/suggested_vacancy" method="POST">
                 <div class="work-exp" id="work-exp"> 
                 <label>Work experience (years):</label>
-                     <select name="req_work_exp">
+                     <select form="general-form" name="req_work_exp">
                         {% for work_experience in options["work_experience"] %}
                             {% if work_experience == vacancy["work_experience"] %}
                                 <option  selected="selected">{{ work_experience }}</option>
                             {% else %}
-                                <option >{{ work_experience }}</option>
+                                <option  >{{ work_experience }}</option>
                             {% endif %}
                         {%endfor%}   
                     </select>
@@ -62,20 +62,20 @@
 
                 <div class="edu" id="edu"> 
                 <label>Education:</label>
-                    <select name="req_edu">
+                    <select form="general-form" name="req_edu">
                         {% for education in options["education"] %}
                             {% if education == vacancy["education"] %}
-                                <option selected="selected">{{ education }}</option>
+                                <option value="{{ education }}"    selected="selected">{{ education }}</option>
                             {% else %}
-                                <option>{{ education }}</option>
+                                <option value="{{ education }}" >{{ education }}</option>
                             {% endif %}
                         {%endfor%}   
                     </select>
                 </div>
 
+</form>
 
 
-                </form>
 
 
 
@@ -149,13 +149,15 @@
                        <input class=" input-submit" id="update_soft_skill" type="submit" value="Add +">
                     </form>
                 </div>
-                <form action="/suggested_vacancy" method="POST">
-                <button  class="btn-sub" id="confirm" type="submit">Nod</button></form>
+                        <form id="general-form" action="/suggested_vacancy" method="POST">
+
+                    <button  class="btn-sub" id="confirm" type="submit">Nod</button>
+                </form>
 
 <!--onclick="window.location.href = '/flying';"-->
 
             </div>
-           
+
         </div>
 
         <footer class="footer" ></footer>

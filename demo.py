@@ -16,6 +16,7 @@ import jinja2
 jinja2.filters.FILTERS['to_json'] = lambda s: json.dumps(s)
 
 SECRET_KEY = 'fdgfh78@#5?>gfhf89dx,v06k'
+#delete_table("Requests")
 init_vacancies_table()
 init_response_table()
 init_request_table()
@@ -293,6 +294,8 @@ def suggested_vacancy():
         request_f = session["bd"]
 
         req_edu = str(escape(request.form.get('req_edu')))
+        print(req_edu)
+
         req_work_exp = str(escape(request.form.get('req_work_exp')))
 
 
