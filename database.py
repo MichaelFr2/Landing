@@ -13,7 +13,7 @@ def init_vacancies_table():
             password TEXT NOT NULL,
             premium BOOL DEFAULT FALSE,
             new_user BOOl DEFAULT TRUE,
-            tutorial_complete BOOl DEFAULT FALSE,
+            tutorial_complete BOOl DEFAULT 0,
             date_of_registration TEXT
         );
     """)
@@ -49,6 +49,7 @@ def init_request_table():
     cursor.execute(f"""
         CREATE TABLE IF NOT EXISTS {'Requests'}(
             id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL ,
+            req_id TEXT NOT NULL,
             name TEXT NOT NULL,
             company TEXT  NOT NULL,
             quantity TEXT  NOT NULL,
@@ -57,13 +58,65 @@ def init_request_table():
             position TEXT NOT NULL,
             date_of_recieve TEXT,
             req_edu TEXT NOT NULL,
-            req_work_exp TEXT NOT NULL
+            req_work_exp TEXT,
+            req_comment TEXT,
+            vacancy_id TEXT NOT NULL,
+            client_id TEXT NOT NULL
         );
     """)
     connect.commit()
     connect.close()
 
+def init_tech_skill_table():
+    connect = sqlite3.connect(DB_NAME)
+    cursor = connect.cursor()
 
+    cursor.execute(f"""
+        CREATE TABLE IF NOT EXISTS {'Tech_skills'}(
+            id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL ,
+            req_id TEXT NOT NULL,
+            client_id TEXT NOT NULL,
+            name TEXT NOT NULL,
+            date_of_recieve TEXT
+
+        );
+    """)
+    connect.commit()
+    connect.close()
+
+def init_soft_skill_table():
+    connect = sqlite3.connect(DB_NAME)
+    cursor = connect.cursor()
+
+    cursor.execute(f"""
+        CREATE TABLE IF NOT EXISTS {'Soft_skills'}(
+            id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL ,
+            req_id TEXT NOT NULL,
+            client_id TEXT NOT NULL,
+            name TEXT NOT NULL,
+            date_of_recieve TEXT
+
+        );
+    """)
+    connect.commit()
+    connect.close()
+
+def init_language_skill_table():
+    connect = sqlite3.connect(DB_NAME)
+    cursor = connect.cursor()
+
+    cursor.execute(f"""
+        CREATE TABLE IF NOT EXISTS {'Language_skills'}(
+            id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL ,
+            req_id TEXT NOT NULL,
+            client_id TEXT NOT NULL,
+            name TEXT NOT NULL,
+            date_of_recieve TEXT
+
+        );
+    """)
+    connect.commit()
+    connect.close()
 
 
 def delete_table(table):
@@ -103,6 +156,8 @@ def insert(table, insert_values):
     connect.commit()
     connect.close()
 
+
+
 def update(table, new_values, where):
     connect = sqlite3.connect(DB_NAME)
     cursor = connect.cursor()
@@ -138,4 +193,22 @@ def get_values(table, columns="*", where={}):
 def employer_exists(where):
     found_instances = get_values("Employers", ["email"], where=where)
     return not len(found_instances) == 0
+
+def init_db_tables():
+    init_vacancies_table()
+    init_response_table()
+    init_request_table()
+    init_language_skill_table()
+    init_tech_skill_table()
+    init_soft_skill_table()
+
+def delete_db_tables():
+    delete_table("Requests")
+    delete_table("Language_skills")
+    delete_table("Tech_skills")
+    delete_table("Soft_skills")
+    delete_table("Employers")
+    delete_table("Responses")
+
+
 

@@ -24,7 +24,7 @@
                 <div class="img-header" id="Ga">
                     <img src="{{url_for('static', filename='img/head-goose.svg')}}" alt="head-goose">
                 </div>
-                <div class="text-header">GAGA goose
+                <div class="text-header">GAGA goose {{tutorial_complete}}
                 <div class="text-header-2">Curriculum Vitae</div>
                 </div>
 
@@ -46,9 +46,9 @@
                         <div class="label-txt eng-lev">{{ vacancy["english_level"] }}</div>
                     </div>
 
-<form action="/suggested_vacancy" method="POST">
+<form >
                 <div class="work-exp" id="work-exp"> 
-                <label>Work experience (years):</label>
+                <label >Work experience (years):</label>
                      <select form="general-form" name="req_work_exp">
                         {% for work_experience in options["work_experience"] %}
                             {% if work_experience == vacancy["work_experience"] %}
@@ -145,16 +145,13 @@
                 <div id="comment" class="comment">
                     <div class="label-comment">Write here your special comment:</div>
                     <form onsubmit="return false;">
-                        <input class="input input-name" type="text" placeholder="Add +">
-                       <input class=" input-submit" id="update_soft_skill" type="submit" value="Add +">
+                        <input class="input input-name" form="general-form" name="req_comment" type="text" placeholder="Add +">
+                       <input class=" input-submit"  id="update_soft_skill" type="submit" value="Add +">
                     </form>
                 </div>
-                        <form id="general-form" action="/suggested_vacancy" method="POST">
-
-                    <button  class="btn-sub" id="confirm" type="submit">Nod</button>
+                <form id="general-form" action="/suggested_vacancy" method="POST">
+                    <button  class="btn-sub" id="confirm" type="submit" >Nod</button>
                 </form>
-
-<!--onclick="window.location.href = '/flying';"-->
 
             </div>
 

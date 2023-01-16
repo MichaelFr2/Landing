@@ -16,12 +16,10 @@ import jinja2
 jinja2.filters.FILTERS['to_json'] = lambda s: json.dumps(s)
 
 SECRET_KEY = 'fdgfh78@#5?>gfhf89dx,v06k'
-#delete_table("Requests")
-init_vacancies_table()
-init_response_table()
-init_request_table()
 
 
+delete_db_tables()
+init_db_tables()
 
 app = Flask(__name__)
 app.config.from_object(__name__)
@@ -180,8 +178,8 @@ def add_new_user():
             # TO DO
             abort(404)
     else:
-        # if current_user.is_authenticated:
-        #     return redirect(url_for('form'))
+        if current_user.is_authenticated:
+             return redirect(url_for('form'))
         return render_template('registration.html')
 
 
@@ -217,7 +215,6 @@ def form():
         name = str(escape(request.form.get('name')))
         company = str(escape(request.form.get('company')))
         quantity = str(escape(request.form.get('quantity')))
-
         english_level = str(escape(request.form.get('english_level')))
         
         required_skill = str(escape(request.form.get('skill_checked')))
@@ -263,6 +260,7 @@ def form():
             session["suggested_vacancy"] = suggested_vacancy
             session["options"] = options
             session["bd"] = vacancy_request
+            session["vacancy_id"] = suggested_vacancy["id"]
 
             return redirect(url_for('loading'))
     else:
@@ -292,14 +290,24 @@ def suggested_vacancy():
 
     if request.method == 'POST':
         request_f = session["bd"]
+        tech_skills = session["technology_stack"]
+        language_skills = session["language_skills"]
+        soft_skills = session["soft_skills"]
+        vacancy_id = session["vacancy_id"]
+
+        req_id = get_values("Requests", ["req_id"], where={"client_id": current_user.get_id()})
+        if len(req_id) == 0: req_id = 1
+        else:
+            req_id = int(req_id[-1]["req_id"]) + 1
 
         req_edu = str(escape(request.form.get('req_edu')))
-        print(req_edu)
-
         req_work_exp = str(escape(request.form.get('req_work_exp')))
+        req_comment = str(escape(request.form.get('req_comment')))
+
 
 
         vacancy_req = {
+            "req_id": req_id,
             "name": request_f["name"],
             "company": request_f["company"],
             "quantity": request_f["quantity"],
@@ -308,18 +316,51 @@ def suggested_vacancy():
             "position": request_f["position"],
             "req_edu": req_edu,
             "req_work_exp": req_work_exp,
+            "client_id": current_user.get_id(),
+            "req_comment": req_comment,
+            "vacancy_id": vacancy_id,
             "date_of_recieve": datetime.datetime.now().strftime('%Y-%m-%d %H:%M')
-
         }
+        for skill in tech_skills:
+            tech_skill = {
+                "name": skill,
+                "req_id": req_id,
+                "client_id": current_user.get_id(),
+                "date_of_recieve": datetime.datetime.now().strftime('%Y-%m-%d %H:%M')
+            }
+            insert("Tech_skills", tech_skill)
+
+        for skill in soft_skills:
+            soft_skill = {
+                "name": skill,
+                "req_id": req_id,
+                "client_id": current_user.get_id(),
+                "date_of_recieve": datetime.datetime.now().strftime('%Y-%m-%d %H:%M')
+            }
+            insert("Soft_skills", soft_skill)
+
+        for skill in language_skills:
+            language_skill = {
+                "name": skill,
+                "req_id": req_id,
+                "client_id": current_user.get_id(),
+                "date_of_recieve": datetime.datetime.now().strftime('%Y-%m-%d %H:%M')
+            }
+            insert("Language_skills", language_skill)
+
+
 
 
         insert("Requests", vacancy_req)
-        return render_template("resume-page 4.html", tutorial_complete=session["tutorial_complete"],
-                               vacancy=session["suggested_vacancy"], options=session["options"])
-        #  return "..."
+        # return render_template("resume-page 4.html", tutorial_complete=session["tutorial_complete"],
+        #                        vacancy=session["suggested_vacancy"], options=session["options"])
+        return redirect(url_for('flying'))
     else:
+        print(type(session["tutorial_complete"]))
         return render_template("resume-page 4.html", tutorial_complete=session["tutorial_complete"],
                                vacancy=session["suggested_vacancy"], options=session["options"])
+
+
 
 
 @app.route("/add_skills", methods=['GET', 'POST'])
@@ -329,11 +370,12 @@ def add_skills():
     if request.method == 'GET':
         skill = request.args.get('skill')
         section = request.args.get('section')
-
         if skill != '':
             lst = session[section]
+
             if skill not in lst:
                 lst += [skill]
+
                 session[section] = lst
 
         return render_template('skill_stack_window.html', skill_section=session[section], section=section)
@@ -357,7 +399,7 @@ def delete_skills():
 @app.route("/flying", methods=['GET', 'POST'])
 def flying():
     login = current_user.get_id()
-    if not get_values("Employers", ["tutorial_complete"], where={"email": login})[0]["tutorial_complete"]:
+    if not get_values("Employers", ["tutorial_complete"], where={"email": login})[0]["tutorial_complete"] :
         new_info = {"tutorial_complete": True}
         update("Employers", new_info, where={"email": login})
     return render_template('flying.html')
