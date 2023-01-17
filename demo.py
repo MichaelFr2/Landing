@@ -7,6 +7,7 @@ from markupsafe import escape
 
 import datetime
 import html
+from mail_service import *
 from dicts import *
 from employee_database import *
 from database import *
@@ -18,14 +19,15 @@ jinja2.filters.FILTERS['to_json'] = lambda s: json.dumps(s)
 SECRET_KEY = 'fdgfh78@#5?>gfhf89dx,v06k'
 
 
-delete_db_tables()
 init_db_tables()
 
 app = Flask(__name__)
 app.config.from_object(__name__)
 
+
 login_manager = LoginManager()
 login_manager.init_app(app)
+
 
 
 @login_manager.user_loader
@@ -65,6 +67,8 @@ def main():
         }
 
         insert("Responses", response_info)
+        send_response("dddd")
+
         return render_template('main.html')
     else:
         return render_template('main.html')
@@ -441,8 +445,7 @@ def contact():
 
 
 if __name__ == "__main__":
-    # delete_table("Employers")
     init_vacancies_table()
-    print(display_table("Employers"))
+
     app.run(host='127.0.0.1', port=5001, debug=True)
 
