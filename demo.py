@@ -38,6 +38,7 @@ def load_user(user_id):
 def test():
     return render_template('resume-page 3.html')
 
+
 @app.route("/")
 def hello_world():
     return redirect(url_for('main'))
@@ -67,7 +68,7 @@ def main():
         }
 
         insert("Responses", response_info)
-        send_response("dddd")
+        send_response(name, email, tel, req_type, comment)
 
         return render_template('main.html')
     else:
@@ -95,6 +96,8 @@ def outstaff():
         }
 
         insert("Responses", response_info)
+        send_response(name, email, tel, req_type, comment)
+
         return render_template('outstaff.html')
     else:
         return render_template('outstaff.html')
@@ -120,6 +123,8 @@ def payroll():
         }
 
         insert("Responses", response_info)
+        send_response(name, email, tel, req_type, comment)
+
         return render_template('payroll.html')
     else:
         return render_template('payroll.html')
@@ -132,16 +137,19 @@ def payrollPageForm():
         email = str(escape(request.form.get('email')))
         tel = str(escape(request.form.get('tel')))
         comment = str(escape(request.form.get('comment')))
+        req_type = "payroll"
         response_info = {
              "name": name,
              "email": email,
              "tel": tel,
-            "req_type": "payroll",
+            "req_type": req_type,
             "comment": comment,
             "date_of_recieve": datetime.datetime.now().strftime('%Y-%m-%d %H:%M')
         }
 
         insert("Responses", response_info)
+        send_response(name, email, tel, req_type, comment)
+
         return render_template('payroll.html')
     else:
         return render_template('payroll.html')
@@ -439,6 +447,8 @@ def contact():
         }
 
         insert("Responses", response_info)
+        send_response(name, email, tel, req_type, comment)
+
         return render_template('contact.html')
     else:
         return render_template('contact.html')

@@ -1,0 +1,119 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #E44900;
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+}
+.main {
+    margin: auto;
+    padding-top: 15px;
+    padding-left: 16px;
+    padding-right: 16px;
+
+
+   }
+
+.pop-up-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    background: white;
+    box-shadow: 0 0 0px 0px rgba(0, 0, 0, 0.9);
+    border-radius: 27px;
+
+}
+
+.pop-up-form {
+    border-radius: 13px;
+    background-color: white;
+    padding: 30px 72px 30px 63px;
+    width: 100%;
+    height: 100%;
+ }
+
+ .pu-label{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 121.2%;
+    text-align: center;
+    color: #000000;
+    padding-bottom: 20px;
+ }
+
+
+.pa-input {
+    display: block;
+    color: #A7A7A7;
+    width: 100%;
+    height: 61px;
+    font-size: 16px;
+    font-weight: 400;
+    padding-left: 20px;
+    padding-top: 20px;
+    border-radius: 6px;
+    border: none;
+    background-color: #F4F4F4;
+    margin: 0px auto 23px;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 7px;
+
+}
+
+
+.label-name{
+    font-weight: 700;
+    color: #5A5A5A;
+    margin-bottom: 40px;
+
+}
+
+.checkbox-level-container {
+   margin-bottom: 10px;
+    margin-top: 7px;
+   display: flex;
+}
+
+
+.checkbox-level-label {
+margin-right: 10px;
+}
+
+.checkbox-level-label label {
+    color: #000000;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+.checkbox-level +label:before {
+    content: "";
+    width: 9px;
+    height: 9px;
+    padding: 3px;
+    margin: 5px;
+    margin-right: 10px;
+    background-clip:content-box;
+    border: 1px solid #ADABAB;
+    border-radius: 50%;
+}
+
+  .checkbox-level + label:before {
+    background-color: #E44900;
+}
+.label-name textarea{
+    height:100px;
+}
