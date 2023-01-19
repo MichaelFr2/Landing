@@ -306,7 +306,8 @@ def suggested_vacancy():
         language_skills = session["language_skills"]
         soft_skills = session["soft_skills"]
         vacancy_id = session["vacancy_id"]
-
+        options = MATCHING
+        print(options['qa'])
         req_id = get_values("Requests", ["req_id"], where={"client_id": current_user.get_id()})
         if len(req_id) == 0: req_id = 1
         else:
@@ -315,24 +316,32 @@ def suggested_vacancy():
         req_edu = str(escape(request.form.get('req_edu')))
         req_work_exp = str(escape(request.form.get('req_work_exp')))
         req_comment = str(escape(request.form.get('req_comment')))
-
-
+        name = request_f["name"]
+        company = request_f["company"]
+        quantity = request_f["quantity"]
+        english_level = request_f["english_level"]
+        required_skill = request_f["required_skill"]
+        position = request_f["position"]
+        client_id = current_user.get_id()
 
         vacancy_req = {
             "req_id": req_id,
-            "name": request_f["name"],
-            "company": request_f["company"],
-            "quantity": request_f["quantity"],
-            "english_level": request_f["english_level"],
-            "required_skill": request_f["required_skill"],
-            "position": request_f["position"],
+            "name": name,
+            "company": company,
+            "quantity": quantity,
+            "english_level": english_level,
+            "required_skill": required_skill,
+            "position": position,
             "req_edu": req_edu,
             "req_work_exp": req_work_exp,
-            "client_id": current_user.get_id(),
+            "client_id": client_id,
             "req_comment": req_comment,
             "vacancy_id": vacancy_id,
             "date_of_recieve": datetime.datetime.now().strftime('%Y-%m-%d %H:%M')
         }
+        insert("Requests", vacancy_req)
+        init_id = get_values("Requests", ["id"], where={"client_id": current_user.get_id()})[-1]["id"]
+
         for skill in tech_skills:
             tech_skill = {
                 "name": skill,
@@ -360,12 +369,9 @@ def suggested_vacancy():
             }
             insert("Language_skills", language_skill)
 
+        send_request(init_id, name, company, quantity, english_level, required_skill, position, req_edu,
+                             req_work_exp, client_id, req_comment, vacancy_id, tech_skills, soft_skills, language_skills, options)
 
-
-
-        insert("Requests", vacancy_req)
-        # return render_template("resume-page 4.html", tutorial_complete=session["tutorial_complete"],
-        #                        vacancy=session["suggested_vacancy"], options=session["options"])
         return redirect(url_for('flying'))
     else:
         print(type(session["tutorial_complete"]))
